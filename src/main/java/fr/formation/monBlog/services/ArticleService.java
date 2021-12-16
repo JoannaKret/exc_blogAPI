@@ -30,6 +30,7 @@ public class ArticleService {
    }
 
    public void deleteArticle(Article article) {
+
         this.articleRepository.delete(article);
    }
 }

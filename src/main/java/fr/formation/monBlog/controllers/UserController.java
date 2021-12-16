@@ -16,29 +16,28 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
-
     @GetMapping
     public List<User> getAll() {
         return this.userService.getAllUsers();
     }
 
     @GetMapping("{username}")
-    public User getUserByUsername(String username) {
+    public User getUserByUsername(@PathVariable String username) {
         return this.userService.getUserByUsername(username);
     }
 
     @PostMapping
-    public User addNewUser(User userToAdd) {
+    public User addNewUser(@RequestBody User userToAdd) {
         return this.userService.addUser(userToAdd);
     }
 
     @PutMapping
-    public User modifyUser(User userToModify) {
+    public User modifyUser(@RequestBody User userToModify) {
         return this.userService.addUser(userToModify);
     }
 
     @DeleteMapping
-    public void removeUser(User userToRemove) {
+    public void removeUser(@RequestBody User userToRemove) {
         this.userService.removeUser(userToRemove);
     }
 }

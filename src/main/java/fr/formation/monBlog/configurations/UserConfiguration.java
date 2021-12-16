@@ -10,6 +10,7 @@ public class UserConfiguration {
 
     @Bean
     public UserService userService(UserRepository userRepository) {
+
         return new UserService(userRepository);
     }
 }

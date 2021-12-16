@@ -19,14 +19,17 @@ public class UserService {
     }
 
     public User getUserByUsername(String username) {
+
         return this.userRepository.findByUsername(username);
     }
 
     public User addUser(User user) {
+
         return this.userRepository.save(user);
     }
 
     public void removeUser(User user) {
+
         this.userRepository.delete(user);
     }
 }
